@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="calculator">
+ <input type="text" id="inp"  onfocus="border()">
+ <div id="buttons">
+    <button class="button" onclick="values(7)">7</button>
+    <button class="button" onclick="values(8)">8</button>
+    <button class="button" onclick="values(9)">9</button>
+    <button class="button" onclick="values('/')">/</button>
+    <button class="button" onclick="values(4)">4</button>
+    <button class="button" onclick="values(5)">5</button>
+    <button class="button" onclick="values(6)">6</button>
+    <button class="button" onclick="values('*')">x</button>
+    <button class="button" onclick="values(1)">1</button>
+    <button class="button" onclick="values(2)">2</button>
+    <button class="button" onclick="values(3)">3</button>
+    <button class="button" onclick="values('-')">-</button>
+    <button class="button" onclick="values(0)">0</button>
+    <button class="button" onclick="values('.')" id="point">.</button>
+    <button class="button" onclick="Cancel()" class="bottom">C</button>
+    <button class="button" onclick="values('+')">+</button>
+    <button class="button" onclick="cancel()" class="bottom">AC</button>
+    <button class="button" onclick="cancel()" class="bottom">CE</button>
+    <button class="button" onclick="Answer()" class="bottom" id="equal">=</button>
+ </div>
+    </div>
+<style>
+   body{
+      background-color:azure;
+   }
+#calculator{
+    border: 3px solid black;
+    width: 31rem;
+    border-radius: 10px;
+    background-color:burlywood;
+    height: 430px;
+    margin: 30rem;
+    margin-top: 6rem;
+    margin-bottom: 7rem;
+}
+ #inp{
+    width: 29rem;
+    margin-left: 0.5rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+    border: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 2.3rem;
+    text-align: center;
+    word-spacing: 10px;
+    background-color:burlywood;
+ }
+ .button{
+    margin-top: 20px;
+    width: 6rem;
+    height: 3rem;
+    margin-left: 20px;
+    border: transparent;
+    border-radius: 5px;
+    background-color:burlywood;
+    border: 3px solid black;
+    box-shadow: 2px 1px black;
+    font-size: 1.5rem;
+ }
+ .bottom{
+   margin-bottom: 10px;
+ }
+ #point{
+   font-weight: bolder;
+   font-size: 20px;
+ }
+ #equal{
+   width: 9rem;
+   background-color: blue;
+   margin-left: 50px;
+   border: none;
+ }
+</style> 
+<script>
+   var val=document.getElementById("inp");
+    function values(v){
+    val.value+=v;
+    }
+    
+    
+    function cancel(){
+    val.value="";
+    }
+    
+    function Answer(){
+    val.value=eval(val.value);
+    }       
+    function Cancel(){
+    val.value=val.value.slice(0,-1);
+    }
+</script>   
+</body>
+</html>
